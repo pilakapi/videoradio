@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: stream-mixer
+    env: docker
+    dockerfilePath: Dockerfile
+    dockerCommand: node server.js
+    envVars:
+      - key: DATABASE_URL
+        value: ${DATABASE_URL}
+      - key: ACCESS_PIN
+        value: ${ACCESS_PIN:198823}
+      - key: BASE_URL
+        value: https://stream-mixer.onrender.com
+      - key: PORT
+        value: 3000
